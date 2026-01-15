@@ -6,6 +6,7 @@ export default function YieldPrediction() {
   return (
     <div>
       <NavScrollExample/>
+      <h1>onion Yield Prediction</h1>
 
       <Footer/>
     </div>
