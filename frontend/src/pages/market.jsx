@@ -42,7 +42,7 @@ const Market = () => {
   const handleMerchantSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${API_URL}/merchant`, merchantForm);
+      await axios.post('http://127.0.0.1:5000/api/merchant', merchantForm);
       alert("Merchant Data Submitted!");
       fetchData();
       setActiveSection('All_Info');
