@@ -1,23 +1,25 @@
 import React, { useState, useEffect, useRef } from 'react';
+import NavScrollExample from '../navbar';
+import Footer from '../common/footer';
 
 // --- Placeholder Components ---
 // These are simple placeholders to fix the "Could not resolve" error.
 // You should replace these with your actual component imports.
-const NavScrollExample = () => {
-  return (
-    <nav style={{ background: '#f8f9fa', padding: '1rem', textAlign: 'center', borderBottom: '1px solid #dee2e6' }}>
-      <p style={{ margin: 0, fontWeight: 'bold' }}>Navbar Placeholder</p>
-    </nav>
-  );
-};
+// const NavScrollExample = () => {
+//   return (
+//     <nav style={{ background: '#f8f9fa', padding: '1rem', textAlign: 'center', borderBottom: '1px solid #dee2e6' }}>
+//       <p style={{ margin: 0, fontWeight: 'bold' }}>Navbar Placeholder</p>
+//     </nav>
+//   );
+// };
 
-const Footer = () => {
-  return (
-    <footer style={{ background: '#f8f9fa', padding: '1rem', textAlign: 'center', borderTop: '1px solid #dee2e6', marginTop: '2rem' }}>
-      <p style={{ margin: 0 }}>Footer Placeholder</p>
-    </footer>
-  );
-};
+// const Footer = () => {
+//   return (
+//     <footer style={{ background: '#f8f9fa', padding: '1rem', textAlign: 'center', borderTop: '1px solid #dee2e6', marginTop: '2rem' }}>
+//       <p style={{ margin: 0 }}>Footer Placeholder</p>
+//     </footer>
+//   );
+// };
 // ------------------------------
 
 
@@ -104,7 +106,7 @@ const FarmerChatbot = () => {
   // --- JSX for Rendering the Component with Bootstrap ---
   return (
     <div>
-      <NavScrollExample /> {/* FIXED: Added component back */}
+      <NavScrollExample/> {/* FIXED: Added component back */}
       <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: 'calc(100vh - 120px)' }}> {/* Adjusted height for footer/nav */}
         <div className="card shadow-lg" style={{ width: "100%", maxWidth: "700px", height: "80vh", display: 'flex', flexDirection: 'column' }}>
           <div className="card-header bg-success text-white text-center">
