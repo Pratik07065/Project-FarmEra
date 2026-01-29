@@ -1,69 +1,93 @@
-from flask import Flask, request, jsonify
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask , render_template,request,jsonify
+from pymongo import MongoClient
+from bson.objectid import ObjectId
 from flask_cors import CORS
 
-app = Flask(__name__)
-CORS(app) # Allows React to talk to Flask
+app= Flask(__name__)
 
-# Database Configuration
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///marketplace.db'
-db = SQLAlchemy(app)
+client=MongoClient('mongodb://localhost:27017')
+db=client['marketplace']
+CORS(app)
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-# Models
-class Farmer(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100))
-    farmer_id = db.Column(db.String(50))
-    address = db.Column(db.String(200))
-    contact = db.Column(db.String(20))
-    email = db.Column(db.String(100))
-    product = db.Column(db.String(100))
-    quantity = db.Column(db.String(50))
-    price = db.Column(db.String(50))
+@app.route('/farmer', methods=['POST', 'GET'])
+def farmerData():
+    if request.method == 'POST':
+        body = request.json
+        
+        # Using .get() prevents the KeyError crash
+        Name = body.get('Name')
+        farmerId = body.get('farmerId')
+        contact = body.get('contact') # Fixed typo 'conatct'
+        emailId = body.get('emailId')
+        product = body.get('product')
+        quantity = body.get('quantity')
+        price = body.get('price') # Fixed your 'body' typo here too
 
-class Merchant(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100))
-    merchant_id = db.Column(db.String(50))
-    address = db.Column(db.String(200))
-    contact = db.Column(db.String(20))
-    email = db.Column(db.String(100))
-    product = db.Column(db.String(100))
-    quantity = db.Column(db.String(50))
-    price = db.Column(db.String(50))
+        # Quick validation check
+        if not Name:
+            return jsonify({"error": "Missing 'Name' field"}), 400
 
-# Routes
-@app.route('/api/farmer', methods=['POST'])
-def add_farmer():
-    data = request.json
-    new_farmer = Farmer(**data)
-    db.session.add(new_farmer)
-    db.session.commit()
-    return jsonify({"message": "Farmer added successfully"}), 201
-
-@app.route('/api/merchant', methods=['POST'])
-def add_merchant():
-    data = request.json
-    new_merchant = Merchant(**data)
-    db.session.add(new_merchant)
-    db.session.commit()
-    return jsonify({"message": "Merchant added successfully"}), 201
-
-@app.route('/api/all_info', methods=['GET'])
-def get_all():
-    farmers = Farmer.query.all()
-    merchants = Merchant.query.all()
+        db['farmer'].insert_one({
+            'Name': Name,
+            'farmerId': farmerId,
+            'contact': contact,
+            'emailId': emailId,
+            'product': product,
+            'quantity': quantity,
+            'price': price
+        })
+        
+        return jsonify({
+            'status': 'Data saved successfully', 
+            'Name': Name,
+            'farmerId': farmerId,
+            'contact': contact,
+            'emailId': emailId,
+            'product': product,
+            'quantity': quantity,
+            'price': price
+            })
     
-    # Format data for frontend cards
-    data = []
-    for f in farmers:
-        data.append({"type": "Farmer", "name": f.name, "product": f.product, "qty": f.quantity, "price": f.price})
-    for m in merchants:
-        data.append({"type": "Merchant", "name": m.name, "product": m.product, "qty": m.quantity, "price": m.price})
-    
-    return jsonify(data)
+@app.route('/merchant',methods=['POST','GET'])
+def merchantData():
+    if request.method == 'POST':
+        body=request.json
+        Name = body.get('Name')
+        merchantId = body.get('merchantId')
+        contact = body.get('contact') # Fixed typo 'conatct'
+        emailId = body.get('emailId')
+        product = body.get('product')
+        quantity = body.get('quantity')
+        price = body.get('price') 
 
-if __name__ == '__main__':
-    with app.app_context():
-        db.create_all() # Creates the database file
-    app.run(debug=True)
+        db['merchant'].insert_one({
+            'Name':Name,
+            'merchantId':merchantId,
+            'contact':contact,
+            'emailId':emailId,
+            'product':product,
+            'quantity':quantity,
+            'price':price
+        })
+        return jsonify({
+            'status':'data is posted to mongodb',
+            'Name':Name,
+            'merchantId':merchantId,
+            'contact':contact,
+            'emailId':emailId,
+            'product':product,
+            'quantity':quantity,
+            'price':price
+        })
+    
+# @app.route('/fmInfo',methods=['POST','GET'])
+# def allData():
+#     if request.method=='GET':
+
+
+if __name__=='__main__':
+    app.debug = True
+    app.run()
