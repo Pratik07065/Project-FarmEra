@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle";
-import reportWebVitals from './reportWebVitals';
+// import reportWebVitals from './reportWebVitals';
 import Home from './pages/home';
 import FarmerChatbot from './pages/chatbot';
 import MarketRate from './pages/marketrate';
@@ -47,4 +47,4 @@ root.render(
   </React.StrictMode>
 );
 
-reportWebVitals();
+// reportWebVitals();

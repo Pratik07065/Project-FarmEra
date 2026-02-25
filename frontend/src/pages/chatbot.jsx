@@ -2,29 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import NavScrollExample from '../navbar';
 import Footer from '../common/footer';
 
-// --- Placeholder Components ---
-// These are simple placeholders to fix the "Could not resolve" error.
-// You should replace these with your actual component imports.
-// const NavScrollExample = () => {
-//   return (
-//     <nav style={{ background: '#f8f9fa', padding: '1rem', textAlign: 'center', borderBottom: '1px solid #dee2e6' }}>
-//       <p style={{ margin: 0, fontWeight: 'bold' }}>Navbar Placeholder</p>
-//     </nav>
-//   );
-// };
-
-// const Footer = () => {
-//   return (
-//     <footer style={{ background: '#f8f9fa', padding: '1rem', textAlign: 'center', borderTop: '1px solid #dee2e6', marginTop: '2rem' }}>
-//       <p style={{ margin: 0 }}>Footer Placeholder</p>
-//     </footer>
-//   );
-// };
-// ------------------------------
-
-
-// This component assumes Bootstrap CSS is loaded in your project's main HTML file.
-// For example: <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 const FarmerChatbot = () => {
   // State to hold the chat messages

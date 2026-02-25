@@ -2,7 +2,6 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-
 import logo from "./components/Logo.png"
 import { Link } from 'react-router-dom';
 
@@ -18,7 +17,7 @@ function NavScrollExample() {
             height="38"
             className="d-inline-block align-top me-2 " // me-2 adds space between the logo and text
           />
-          <span className='fw-semibold'>Crop Yield Predictor</span>
+          <span className='fw-semibold'>FarmEra</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
