@@ -67,24 +67,22 @@ Machine Learning
 - Random Forest
 - Regression Models
 
-AI Integration
-
-- OpenAI API
-
 Database
 
-- MySQL
+- MongoDB
 
 Frontend
 
 - HTML
 - CSS
 - JavaScript
+- ReactJS
 
 Tools
 
 - Git
 - GitHub
+- Postman
 
 ---
 
