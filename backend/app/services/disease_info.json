@@ -1,0 +1,283 @@
+{
+  "Pepper__bell___Bacterial_spot": {
+    "name": "Bacterial Spot",
+    "crop": "Bell Pepper",
+    "symptoms": [
+      "Small, water-soaked spots on leaves",
+      "Spots turn dark brown/black with light centers",
+      "Leaves turn yellow and drop prematurely",
+      "Scabby, dark lesions on the pepper fruit"
+    ],
+    "treatment": [
+      "Apply copper-based bactericides immediately",
+      "Remove and destroy severely infected plant debris",
+      "Do not compost infected plants"
+    ],
+    "prevention": [
+      "Plant pathogen-free seeds and resistant varieties",
+      "Practice 2-3 year crop rotation",
+      "Avoid overhead watering to keep foliage dry"
+    ]
+  },
+  "Pepper__bell___healthy": {
+    "name": "Healthy Plant",
+    "crop": "Bell Pepper",
+    "symptoms": [
+      "Vibrant green leaves",
+      "Strong, upright stems",
+      "No visible spots, wilting, or pest damage"
+    ],
+    "treatment": [
+      "No active treatment required."
+    ],
+    "prevention": [
+      "Maintain consistent soil moisture",
+      "Apply balanced fertilizers as needed",
+      "Monitor weekly for early signs of pests"
+    ]
+  },
+  "Potato___Early_blight": {
+    "name": "Early Blight",
+    "crop": "Potato",
+    "symptoms": [
+      "Small, dark, brown/black spots on older leaves",
+      "Spots enlarge to form concentric rings (target board pattern)",
+      "Lower leaves yellow, dry up, and die"
+    ],
+    "treatment": [
+      "Apply fungicides like Mancozeb or Chlorothalonil early",
+      "Remove and safely destroy severely infected lower leaves"
+    ],
+    "prevention": [
+      "Practice 2-3 year crop rotation",
+      "Ensure proper spacing for air circulation",
+      "Avoid overhead watering and water at the base of the plant"
+    ]
+  },
+  "Potato___Late_blight": {
+    "name": "Late Blight",
+    "crop": "Potato",
+    "symptoms": [
+      "Irregular, water-soaked spots on leaves",
+      "White fuzzy fungal growth on the underside of leaves",
+      "Dark brown, shallow, and firm lesions on tubers"
+    ],
+    "treatment": [
+      "Immediately destroy infected plants (do not compost)",
+      "Apply preventative fungicides containing chlorothalonil or copper",
+      "Harvest tubers only after vines are completely dead"
+    ],
+    "prevention": [
+      "Plant certified disease-free seed potatoes",
+      "Destroy volunteer potatoes and cull piles",
+      "Avoid planting tomatoes near potatoes"
+    ]
+  },
+  "Potato___healthy": {
+    "name": "Healthy Plant",
+    "crop": "Potato",
+    "symptoms": [
+      "Vibrant green foliage",
+      "Vigorous growth",
+      "No signs of rot, spotting, or insect damage"
+    ],
+    "treatment": [
+      "No active treatment required."
+    ],
+    "prevention": [
+      "Ensure proper hilling around the base",
+      "Maintain regular watering schedule",
+      "Monitor for potato beetles and aphids"
+    ]
+  },
+  "Tomato_Bacterial_spot": {
+    "name": "Bacterial Spot",
+    "crop": "Tomato",
+    "symptoms": [
+      "Small, dark, water-soaked spots on leaves",
+      "Spots may have a yellow halo and cause leaves to drop",
+      "Small, raised, scab-like spots on green fruit"
+    ],
+    "treatment": [
+      "Spray with copper fungicides mixed with Mancozeb",
+      "Prune affected leaves immediately",
+      "Sanitize pruning tools between cuts"
+    ],
+    "prevention": [
+      "Use drip irrigation instead of overhead sprinklers",
+      "Plant resistant tomato varieties",
+      "Clear garden debris at the end of the season"
+    ]
+  },
+  "Tomato_Early_blight": {
+    "name": "Early Blight",
+    "crop": "Tomato",
+    "symptoms": [
+      "Bullseye patterned spots on lower/older leaves",
+      "Yellowing of tissue surrounding the spots",
+      "Dark, sunken lesions on stems at the soil line"
+    ],
+    "treatment": [
+      "Apply fungicides like copper, chlorothalonil, or Bacillus subtilis",
+      "Prune off the lowest branches to prevent soil contact",
+      "Apply organic mulch around the base of the plant"
+    ],
+    "prevention": [
+      "Space plants properly to allow sunlight and airflow",
+      "Practice 3-year crop rotation",
+      "Stake or cage tomatoes to keep foliage off the ground"
+    ]
+  },
+  "Tomato_Late_blight": {
+    "name": "Late Blight",
+    "crop": "Tomato",
+    "symptoms": [
+      "Large, pale green to brown spots on leaves",
+      "White fuzzy growth on leaf undersides in high humidity",
+      "Firm, dark brown spots on the tomato fruit"
+    ],
+    "treatment": [
+      "Immediate application of copper-based fungicides",
+      "Remove and bag infected plants immediately to stop spread",
+      "Do not save seeds from infected plants"
+    ],
+    "prevention": [
+      "Plant late-blight resistant varieties",
+      "Ensure excellent airflow and reduce humidity",
+      "Keep foliage dry"
+    ]
+  },
+  "Tomato_Leaf_Mold": {
+    "name": "Leaf Mold",
+    "crop": "Tomato",
+    "symptoms": [
+      "Pale green or yellow spots on the upper leaf surface",
+      "Velvety, olive-green to brown mold on the underside of leaves",
+      "Infected leaves eventually wither and die"
+    ],
+    "treatment": [
+      "Improve ventilation and air circulation immediately",
+      "Apply fungicides containing chlorothalonil if severe",
+      "Remove heavily infected leaves"
+    ],
+    "prevention": [
+      "Maintain low humidity, especially in greenhouses",
+      "Prune tomato plants to open up the canopy",
+      "Water at the base early in the day"
+    ]
+  },
+  "Tomato_Septoria_leaf_spot": {
+    "name": "Septoria Leaf Spot",
+    "crop": "Tomato",
+    "symptoms": [
+      "Small, circular spots with dark borders and gray/tan centers",
+      "Tiny black specks (fruiting bodies) in the center of spots",
+      "Starts on lower leaves and moves up the plant"
+    ],
+    "treatment": [
+      "Apply fungicides (copper or chlorothalonil) every 7-10 days",
+      "Remove and destroy heavily infected leaves",
+      "Wash hands and tools after handling infected plants"
+    ],
+    "prevention": [
+      "Apply heavy mulch to prevent soil splashing onto leaves",
+      "Water at the soil level",
+      "Practice crop rotation"
+    ]
+  },
+  "Tomato_Spider_mites_Two_spotted_spider_mite": {
+    "name": "Two-Spotted Spider Mites",
+    "crop": "Tomato",
+    "symptoms": [
+      "Tiny yellow or white speckles (stippling) on leaves",
+      "Fine, silky webbing on the undersides of leaves or stems",
+      "Leaves turn bronze, yellow, and dry up"
+    ],
+    "treatment": [
+      "Spray foliage thoroughly with insecticidal soap or neem oil",
+      "Use a strong jet of water to wash mites off the plant",
+      "Release predatory mites (Phytoseiulus persimilis) in greenhouses"
+    ],
+    "prevention": [
+      "Keep plants well-watered (mites thrive in hot, dry, dusty conditions)",
+      "Wash dust off foliage periodically",
+      "Avoid broad-spectrum insecticides that kill natural predators"
+    ]
+  },
+  "Tomato__Target_Spot": {
+    "name": "Target Spot",
+    "crop": "Tomato",
+    "symptoms": [
+      "Small brown spots with concentric rings on leaves",
+      "Spots may merge, causing large dead areas",
+      "Dark, sunken lesions on the fruit with distinct rings"
+    ],
+    "treatment": [
+      "Apply broad-spectrum fungicides (chlorothalonil or mancozeb)",
+      "Prune plants to improve airflow and drying",
+      "Remove infected leaves as soon as they appear"
+    ],
+    "prevention": [
+      "Provide adequate spacing between plants",
+      "Avoid prolonged periods of leaf wetness",
+      "Destroy all crop residue at the end of the season"
+    ]
+  },
+  "Tomato__Tomato_YellowLeaf__Curl_Virus": {
+    "name": "Yellow Leaf Curl Virus",
+    "crop": "Tomato",
+    "symptoms": [
+      "Severe stunting of the plant",
+      "Leaves curl upward and become cup-shaped",
+      "Leaves turn pale yellow with green veins",
+      "Flowers drop, severely reducing fruit yield"
+    ],
+    "treatment": [
+      "There is no cure for this virus.",
+      "Immediately pull up and bag/destroy infected plants to protect others",
+      "Spray for whiteflies (the vector) using insecticidal soaps"
+    ],
+    "prevention": [
+      "Plant TYLCV-resistant tomato varieties",
+      "Control whitefly populations using yellow sticky traps",
+      "Use reflective mulches to deter insects"
+    ]
+  },
+  "Tomato__Tomato_mosaic_virus": {
+    "name": "Mosaic Virus",
+    "crop": "Tomato",
+    "symptoms": [
+      "Light and dark green mottled areas on leaves (mosaic pattern)",
+      "Leaves may look fern-like, distorted, or puckered",
+      "Stunted growth and reduced fruit yield",
+      "Internal browning of the fruit"
+    ],
+    "treatment": [
+      "There is no cure for this virus.",
+      "Carefully remove and destroy infected plants immediately",
+      "Do not smoke near plants (virus is transmitted via tobacco products)"
+    ],
+    "prevention": [
+      "Wash hands thoroughly with soap before handling plants",
+      "Disinfect pruning tools with a bleach solution",
+      "Use TMV-resistant seed varieties"
+    ]
+  },
+  "Tomato_healthy": {
+    "name": "Healthy Plant",
+    "crop": "Tomato",
+    "symptoms": [
+      "Deep green, lush leaves",
+      "Strong, sturdy stems",
+      "Vibrant flowering and fruiting without spots or decay"
+    ],
+    "treatment": [
+      "No active treatment required."
+    ],
+    "prevention": [
+      "Deep, consistent watering at the base",
+      "Regular application of tomato-specific fertilizer",
+      "Proper staking or trellising for support"
+    ]
+  }
+}

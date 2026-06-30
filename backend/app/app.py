@@ -1,93 +1,47 @@
-from flask import Flask , render_template,request,jsonify
-from pymongo import MongoClient
-from bson.objectid import ObjectId
-from flask_cors import CORS
+"""
+FarmEra backend entrypoint.
 
-app= Flask(__name__)
+Important: the "real" app (all routes + models) is assembled in `application.py` via
+`create_app()` using blueprints.
 
-client=MongoClient('mongodb://localhost:27017')
-db=client['marketplace']
-CORS(app)
-@app.route('/')
-def index():
-    return render_template('index.html')
+Run:
+  python app.py
 
-@app.route('/farmer', methods=['POST', 'GET'])
-def farmerData():
-    if request.method == 'POST':
-        body = request.json
-        
-        # Using .get() prevents the KeyError crash
-        Name = body.get('Name')
-        farmerId = body.get('farmerId')
-        contact = body.get('contact') # Fixed typo 'conatct'
-        emailId = body.get('emailId')
-        product = body.get('product')
-        quantity = body.get('quantity')
-        price = body.get('price') # Fixed your 'body' typo here too
+This will expose:
+  - POST /disease/predict   (leaf disease image)
+  - POST /predict           (market price prediction)
+  - POST /predict_yield     (yield prediction)
+  - /market/*, /auth/*, ...
+"""
 
-        # Quick validation check
-        if not Name:
-            return jsonify({"error": "Missing 'Name' field"}), 400
+try:
+    from .application import create_app
+except ImportError:
+    from application import create_app
 
-        db['farmer'].insert_one({
-            'Name': Name,
-            'farmerId': farmerId,
-            'contact': contact,
-            'emailId': emailId,
-            'product': product,
-            'quantity': quantity,
-            'price': price
-        })
-        
-        return jsonify({
-            'status': 'Data saved successfully', 
-            'Name': Name,
-            'farmerId': farmerId,
-            'contact': contact,
-            'emailId': emailId,
-            'product': product,
-            'quantity': quantity,
-            'price': price
-            })
+app = create_app()
+
+
+if __name__ == "__main__":
+    import logging
+    import os
+
+    # Keep console readable (optional)
+    logging.getLogger("werkzeug").setLevel(logging.ERROR)
+
+    host = os.environ.get("BACKEND_HOST", "127.0.0.1")
+    port = int(os.environ.get("BACKEND_PORT", "5000"))
+    use_reloader = os.environ.get("FLASK_USE_RELOADER", "").lower() in ("1", "true", "yes")
+
+    print(f"\nFarmEra backend -> http://{host}:{port}/\n")
+    app.run(debug=True, use_reloader=use_reloader, host=host, port=port)
+
+
+
+
+
+
+
+
+
     
-@app.route('/merchant',methods=['POST','GET'])
-def merchantData():
-    if request.method == 'POST':
-        body=request.json
-        Name = body.get('Name')
-        merchantId = body.get('merchantId')
-        contact = body.get('contact') # Fixed typo 'conatct'
-        emailId = body.get('emailId')
-        product = body.get('product')
-        quantity = body.get('quantity')
-        price = body.get('price') 
-
-        db['merchant'].insert_one({
-            'Name':Name,
-            'merchantId':merchantId,
-            'contact':contact,
-            'emailId':emailId,
-            'product':product,
-            'quantity':quantity,
-            'price':price
-        })
-        return jsonify({
-            'status':'data is posted to mongodb',
-            'Name':Name,
-            'merchantId':merchantId,
-            'contact':contact,
-            'emailId':emailId,
-            'product':product,
-            'quantity':quantity,
-            'price':price
-        })
-    
-# @app.route('/fmInfo',methods=['POST','GET'])
-# def allData():
-#     if request.method=='GET':
-
-
-if __name__=='__main__':
-    app.debug = True
-    app.run()

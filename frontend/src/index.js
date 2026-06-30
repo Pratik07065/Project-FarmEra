@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 // import reportWebVitals from './reportWebVitals';
@@ -12,6 +12,10 @@ import YieldPrediction from './pages/YieldPred';
 import Ratepredictor from './pages/ratepredictor';
 import Market from './pages/market';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import AuthPage from './pages/auth';
+import DiseasePrediction from './pages/diseaseprediction';
+import ProfilePage from './pages/profile';
+import AdminPanel from './pages/adminPanel';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let allroutes=createBrowserRouter([
@@ -38,6 +42,22 @@ let allroutes=createBrowserRouter([
   {
     path:'market',
     element:<Market/>
+  },
+  {
+    path:'disease-prediction',
+    element:<DiseasePrediction/>
+  },
+   {
+    path:'log',
+    element:<AuthPage/>
+  },
+  {
+    path:'profile',
+    element:<ProfilePage/>
+  },
+  {
+    path:'admin-panel',
+    element:<AdminPanel/>
   }
 ])
 root.render(
